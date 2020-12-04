@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Application</class>
+ <widget class="QMainWindow" name="Application">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Palamariuk | Course work | Text Analyzer </string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QTextEdit" name="textEdit">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QPushButton" name="btAdvansedStatistics">
+      <property name="text">
+       <string>Show advanced statistics</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="openFile"/>
+    <addaction name="saveFile"/>
+    <addaction name="saveFileAs"/>
+    <addaction name="closeFile"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <addaction name="clearFormatting"/>
+    <addaction name="actionUndo"/>
+    <addaction name="actionRedo"/>
+    <addaction name="actionCopy"/>
+    <addaction name="actionPaste"/>
+   </widget>
+   <widget class="QMenu" name="menuAnalysis">
+    <property name="title">
+     <string>Analysis</string>
+    </property>
+    <widget class="QMenu" name="menuShow_identical_sentences">
+     <property name="title">
+      <string>Show identical</string>
+     </property>
+     <addaction name="showIdSentences"/>
+     <addaction name="showIdProperNames"/>
+    </widget>
+    <widget class="QMenu" name="menuShow_words">
+     <property name="title">
+      <string>Show words</string>
+     </property>
+     <addaction name="showLongestWords"/>
+     <addaction name="showShortestWords"/>
+    </widget>
+    <addaction name="getAverageLength"/>
+    <addaction name="getLetterFrequency"/>
+    <addaction name="menuShow_identical_sentences"/>
+    <addaction name="menuShow_words"/>
+    <addaction name="repeatNumbers"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuAnalysis"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>0</height>
+    </size>
+   </property>
+  </widget>
+  <action name="openFile">
+   <property name="text">
+    <string>Open</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="closeFile">
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </action>
+  <action name="saveFile">
+   <property name="text">
+    <string>Save</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="saveFileAs">
+   <property name="text">
+    <string>Save as...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
+   </property>
+  </action>
+  <action name="actionUndo">
+   <property name="text">
+    <string>Undo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Z</string>
+   </property>
+  </action>
+  <action name="actionRedo">
+   <property name="text">
+    <string>Redo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+Z</string>
+   </property>
+  </action>
+  <action name="actionCopy">
+   <property name="text">
+    <string>Copy</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="actionPaste">
+   <property name="text">
+    <string>Paste</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+V</string>
+   </property>
+  </action>
+  <action name="getAverageLength">
+   <property name="text">
+    <string>Average length</string>
+   </property>
+  </action>
+  <action name="getLetterFrequency">
+   <property name="text">
+    <string>Letter frequency</string>
+   </property>
+  </action>
+  <action name="showIdSentences">
+   <property name="text">
+    <string>Sentences</string>
+   </property>
+  </action>
+  <action name="showIdProperNames">
+   <property name="text">
+    <string>Proper names</string>
+   </property>
+  </action>
+  <action name="showLongestWords">
+   <property name="text">
+    <string>The longest word</string>
+   </property>
+  </action>
+  <action name="showShortestWords">
+   <property name="text">
+    <string>The shortest word</string>
+   </property>
+  </action>
+  <action name="repeatNumbers">
+   <property name="text">
+    <string>Show repeat numbers</string>
+   </property>
+  </action>
+  <action name="clearFormatting">
+   <property name="text">
+    <string>Clear formatting</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
