@@ -9,6 +9,7 @@
 #include <QStatusBar>
 #include <QTextEdit>
 #include <QDebug>
+#include <QCloseEvent>
 
 #include "text.h"
 #include "textanalyzer.h"
@@ -63,11 +64,22 @@ private slots:
 
     void on_showIdProperNames_triggered();
 
-    void highlightText(QTextEdit* te, QColor color, size_t begin, size_t length);
+    /*Метод очищення форматування конкретного textEdit'a*/
+    void clearFormatting(QTextEdit* textEdit);
 
-    void highlightWordsByLength(QTextEdit* te, QVector<QPair<QString, int>> words, int len);
+    /*Методи підсвічування тексту в textEdit за певними умовами*/
+    void highlightText(QTextEdit* textEdit, QColor color,
+                       size_t begin, size_t length);
 
-    void highlightAllOccures(QTextEdit* te, TextAnalyzer analyzer, QVector<QString> substrings);
+    void highlightWordsByLength(QTextEdit* textEdit,
+                                QVector<QPair<QString, int>> words, int length);
+
+    void highlightAllOccures(QTextEdit* textEdit, TextAnalyzer analyzer,
+                             QVector<QString> substrings);
+
+    void on_showTask_triggered();
+
+    void closeEvent(QCloseEvent *event);
 
 private:
     Ui::Application *ui;

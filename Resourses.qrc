@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/Resourses">
         <file>Dictionary/proper_names.json</file>
+        <file>task.txt</file>
     </qresource>
 </RCC>

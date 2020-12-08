@@ -39,8 +39,10 @@ void Frequency::on_btFrequency_clicked()
         int numLetters = analyzer.computeNumberOfLetters();
         if(!numLetters) throw NoLettersException();
 
-        QString letter = ui->leLetter->text();
-        frequency = analyzer.computeNumberOfSymbol(letter.toStdString()[0]) * 100.0 / numLetters;
+        QString qsLetter = ui->leLetter->text();
+        char letter = qsLetter.toStdString()[0];
+        frequency = analyzer.computeNumberOfSymbol(letter) * 100.0 / numLetters;
+
     } catch (NoLettersException& error) {
         frequency = 0;
         QMessageBox::critical(this, "No Letters Error", error.what());

@@ -24,6 +24,9 @@
     </item>
     <item row="1" column="0">
      <widget class="QPushButton" name="btAdvansedStatistics">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show statistics about letters, words and sentences in your text&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
       <property name="text">
        <string>Show advanced statistics</string>
       </property>
@@ -40,9 +43,12 @@
      <height>22</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menu">
+   <widget class="QMenu" name="menuFile">
     <property name="title">
      <string>File</string>
+    </property>
+    <property name="toolTipsVisible">
+     <bool>true</bool>
     </property>
     <addaction name="openFile"/>
     <addaction name="saveFile"/>
@@ -52,6 +58,9 @@
    <widget class="QMenu" name="menuEdit">
     <property name="title">
      <string>Edit</string>
+    </property>
+    <property name="toolTipsVisible">
+     <bool>true</bool>
     </property>
     <addaction name="clearFormatting"/>
     <addaction name="actionUndo"/>
@@ -63,29 +72,54 @@
     <property name="title">
      <string>Analysis</string>
     </property>
-    <widget class="QMenu" name="menuShow_identical_sentences">
+    <property name="toolTipsVisible">
+     <bool>true</bool>
+    </property>
+    <widget class="QMenu" name="menuShowIdentical">
+     <property name="toolTip">
+      <string>Show identical...</string>
+     </property>
      <property name="title">
       <string>Show identical</string>
+     </property>
+     <property name="toolTipsVisible">
+      <bool>true</bool>
      </property>
      <addaction name="showIdSentences"/>
      <addaction name="showIdProperNames"/>
     </widget>
-    <widget class="QMenu" name="menuShow_words">
+    <widget class="QMenu" name="menuShowWords">
+     <property name="toolTip">
+      <string>Show words...</string>
+     </property>
      <property name="title">
       <string>Show words</string>
+     </property>
+     <property name="toolTipsVisible">
+      <bool>true</bool>
      </property>
      <addaction name="showLongestWords"/>
      <addaction name="showShortestWords"/>
     </widget>
     <addaction name="getAverageLength"/>
     <addaction name="getLetterFrequency"/>
-    <addaction name="menuShow_identical_sentences"/>
-    <addaction name="menuShow_words"/>
+    <addaction name="menuShowIdentical"/>
+    <addaction name="menuShowWords"/>
     <addaction name="repeatNumbers"/>
    </widget>
-   <addaction name="menu"/>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <property name="toolTipsVisible">
+     <bool>true</bool>
+    </property>
+    <addaction name="showTask"/>
+   </widget>
+   <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
    <addaction name="menuAnalysis"/>
+   <addaction name="menuHelp"/>
   </widget>
   <widget class="QStatusBar" name="statusbar">
    <property name="minimumSize">
@@ -99,6 +133,9 @@
    <property name="text">
     <string>Open</string>
    </property>
+   <property name="toolTip">
+    <string>Open file</string>
+   </property>
    <property name="shortcut">
     <string>Ctrl+O</string>
    </property>
@@ -107,10 +144,16 @@
    <property name="text">
     <string>Close</string>
    </property>
+   <property name="toolTip">
+    <string>Close document</string>
+   </property>
   </action>
   <action name="saveFile">
    <property name="text">
     <string>Save</string>
+   </property>
+   <property name="toolTip">
+    <string>Save to file</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+S</string>
@@ -120,6 +163,9 @@
    <property name="text">
     <string>Save as...</string>
    </property>
+   <property name="toolTip">
+    <string>Save file as</string>
+   </property>
    <property name="shortcut">
     <string>Ctrl+Shift+S</string>
    </property>
@@ -127,6 +173,9 @@
   <action name="actionUndo">
    <property name="text">
     <string>Undo</string>
+   </property>
+   <property name="toolTip">
+    <string>Undo action</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+Z</string>
@@ -136,6 +185,9 @@
    <property name="text">
     <string>Redo</string>
    </property>
+   <property name="toolTip">
+    <string>Redo action</string>
+   </property>
    <property name="shortcut">
     <string>Ctrl+Shift+Z</string>
    </property>
@@ -143,6 +195,9 @@
   <action name="actionCopy">
    <property name="text">
     <string>Copy</string>
+   </property>
+   <property name="toolTip">
+    <string>Copy text</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+C</string>
@@ -152,48 +207,92 @@
    <property name="text">
     <string>Paste</string>
    </property>
+   <property name="toolTip">
+    <string>Paste text</string>
+   </property>
    <property name="shortcut">
     <string>Ctrl+V</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::ApplicationShortcut</enum>
    </property>
   </action>
   <action name="getAverageLength">
    <property name="text">
     <string>Average length</string>
    </property>
+   <property name="toolTip">
+    <string>Find average lengths</string>
+   </property>
   </action>
   <action name="getLetterFrequency">
    <property name="text">
     <string>Letter frequency</string>
+   </property>
+   <property name="toolTip">
+    <string>Open frequency form</string>
    </property>
   </action>
   <action name="showIdSentences">
    <property name="text">
     <string>Sentences</string>
    </property>
+   <property name="toolTip">
+    <string>Show identical sentences</string>
+   </property>
   </action>
   <action name="showIdProperNames">
    <property name="text">
     <string>Proper names</string>
+   </property>
+   <property name="toolTip">
+    <string>Show identical proper names</string>
    </property>
   </action>
   <action name="showLongestWords">
    <property name="text">
     <string>The longest word</string>
    </property>
+   <property name="toolTip">
+    <string>Show the longest word</string>
+   </property>
   </action>
   <action name="showShortestWords">
    <property name="text">
     <string>The shortest word</string>
+   </property>
+   <property name="toolTip">
+    <string>Show the shortest word</string>
    </property>
   </action>
   <action name="repeatNumbers">
    <property name="text">
     <string>Show repeat numbers</string>
    </property>
+   <property name="toolTip">
+    <string>Show repeat numbers in your text</string>
+   </property>
   </action>
   <action name="clearFormatting">
    <property name="text">
     <string>Clear formatting</string>
+   </property>
+   <property name="toolTip">
+    <string>Clear all text formatting</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+F</string>
+   </property>
+  </action>
+  <action name="showTask">
+   <property name="text">
+    <string>Task</string>
+   </property>
+   <property name="toolTip">
+    <string>Show task</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+T</string>
    </property>
   </action>
  </widget>

@@ -186,3 +186,5 @@ int TextAnalyzer::computeMaxWordsLength()
 
     return maxLen;
 }
+
+
