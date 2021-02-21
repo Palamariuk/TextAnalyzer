@@ -251,6 +251,12 @@ void Application::on_showIdSentences_triggered()
 {
     clearFormatting(ui->textEdit);
 
+    if(ui->textEdit->toPlainText().isEmpty()){
+        QMessageBox::warning(this, "No words",
+                             "There are no words in your text");
+        return;
+    }
+
     ui->textEdit >> *(text);
     TextAnalyzer analyzer(*text);
 
@@ -293,6 +299,12 @@ void Application::on_repeatNumbers_triggered()
 void Application::on_showIdProperNames_triggered()
 {
     clearFormatting(ui->textEdit);
+
+    if(ui->textEdit->toPlainText().isEmpty()){
+        QMessageBox::warning(this, "No words",
+                             "There are no words in your text");
+        return;
+    }
 
     ui->textEdit >> *(text);
     TextAnalyzer analyzer(*text);
